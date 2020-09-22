@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@mostrarRaiz');
+
+Route::get('hola', 'HomeController@irAHola');
+
+Route::get('chau', 'HomeController@irAChau');
+
+Route::get('bienvenido', 'HomeController@irABienvenido');
+
+Route::post('rutaPost', 'HomeController@ejecutarPost');
+
+//----------------------------------------------------------------
+Route::get('/login', 'HomeController@mostrarFormularioIniciarSesion');
+Route::post('/verificarLogin', 'HomeController@verificarDatosDeInicioDeSesion');
